@@ -138,6 +138,79 @@ img {
 .product-category {
     color: lightgray;
 }
+/******************  Single Products  ******************/
+.product_container {
+    max-width: 400px;
+}
+.product_container img {
+    opacity: 50%;
+}
+/* Choose size knap */
+.choose_size {
+    position: relative;
+    display: inline-block;
+    border: 1px solid grey;
+    width: 135px;
+    height: fit-content;
+}
+.size_button {
+    background-color:#fff;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.size_dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 100px;
+    color: #000;
+    /* Skjult før man klikker */
+    display: none;
+}
+.size_dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.size_dropdown li:hover {
+    background-color: #fff;
+}
+.choose_size:hover .size_dropdown {
+    /* Synlig, når man hover/klikker */
+    display: block;
+    width: 100px;
+
+}
+/* Add to basket knap */
+.add_to_basket {
+    display: grid;
+    background-color: lightgray;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+}
+.add_to_basket_knap {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    width: 150px;
+    margin: 10px 0 0 0;
+   padding: 10px;
+}
+.add_to_basket_knap a {
+    text-decoration: none;
+    color: #000;
+    margin: 20px 0 0 0 ;
+}
 /**********************  Footer  **********************/
 footer {
     border-top: 2px solid #000;
