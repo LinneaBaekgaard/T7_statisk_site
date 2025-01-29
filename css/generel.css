@@ -64,6 +64,80 @@ img {
     background-color: lightgrey;
     color: gray;
 }
+/*******************  Product Cards  ******************/
+.product_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 400px;
+    gap: 10px;
+}
+.card1 img:hover, .card2 img:hover, .card3 img:hover, .card4 img:hover {
+    cursor: pointer;
+}
+.card1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+.card2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+.card3 {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+}
+.card4 {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+}
+.card3 img,
+.card4 img {
+    opacity: 50%;
+}
+.product_card {
+   border: 1px solid #000; 
+   width: 195px;
+   height: 100%;
+   border-radius: 2px;
+   overflow: hidden;
+   background-color: white;
+   text-align: left;
+}
+.product_info {
+    border-top: 1px solid #000;
+    padding: 0 5px 5px 5px;
+}
+/*  Rabat%  */
+.rabat_container {
+    display: flex;
+    justify-content: flex-end;
+}
+.rabat {
+    width: 40px;
+    background-color: red;
+    margin-right: 5px;
+}
+/* Læs mere knap */
+.read_more {
+    color: #000;
+    display: block;
+}
+.read_more:hover {
+    color: gray;
+}
+/* Sold Out knap */
+.sold_out {
+    position: absolute;
+    background-color: #444;
+    color: #fff;
+    padding: 15px 15px 15px 15px;
+}
+/* tekst på cards */
+.product-category {
+    color: lightgray;
+}
 /**********************  Footer  **********************/
 footer {
     border-top: 2px solid #000;
