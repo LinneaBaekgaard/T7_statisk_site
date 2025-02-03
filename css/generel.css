@@ -99,8 +99,8 @@ img {
 }
 .product_card {
    border: 1px solid #000; 
-   width: 195px;
-   height: 100%;
+   /* width: 195px;
+   height: 100%; */
    border-radius: 2px;
    overflow: hidden;
    background-color: white;
@@ -261,7 +261,8 @@ footer {
 @media (width >= 1000px) {
  .product_list_container {
         display: grid;
-        grid-template-columns:repeat(4, 1fr);
+        /* grid-template-columns:repeat(4, 1fr); */
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         max-width: 1200px;
         gap: 10px;
     }
