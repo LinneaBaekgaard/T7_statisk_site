@@ -22,6 +22,67 @@
     <main>
       <h3>Produkter</h3>
       <section class="productList"></section>
+      <!-- <section class="product_list_container">
+        <article class="product_card" >
+        <div class="sold_out  ${product.soldout && "sold_out"}">Sold Out</div>
+            <div class="card1">
+                    <a href="product.html">
+                        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje"/>
+                    </a>
+                <div class="product_info">
+                    <h3 class="product-title">${product.productdisplayname}</h3>
+                        <p class="product-category">Shorts | Nike</p>
+                        <p class="product-price">DKK ${product.price} ,-</p>
+                        <a href="product.html" class="read_more">Read More</a>
+                </div>   
+                <div class="rabat_container">
+                    <p class="rabat ${product.discount && "rabat_container"}">%</p>
+                </div>
+            </div>
+        </article>
+      </section> -->
+
+      <!-- <section class="product_list_container">
+        <article class="product_card" >
+        <div class="sold_out  ${product.soldout && "sold_out"}">Sold Out</div>
+            <div class="card1">
+                    <a href="product.html">
+                        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje"/>
+                    </a>
+                <div class="product_info">
+                    <h3>${product.productdisplayname}</h3>
+                        <p class="product-category">class="product-category">${product.articletype} | ${product.brandname}</p>
+                        <p class="product-price"DKK <span>${product.rpice}</span>,-/p>
+                        <a href="product.html" class="read_more">Read More</a>
+                </div>   
+                <div class="rabat_container">
+                    <p> Now DKK <span>${math.floor((product.price * product.discount) / 100)}</span>,-</p>
+                    <p><span>${product.discount}</span>%</p> 
+                </div>
+            </div>
+        </div>
+        </article>
+      </section> -->
+
+      <!-- <section class="product_list_container">
+        <article class="product_card ${product.discount && "rabat"} ${product.solout && "sold_out"}">
+          <div class="card1">
+              <img 
+                  src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image"/>
+          <div class="product_info">
+              <h3>${product.productdisplayname}</h3>
+              <p class="product-category">${product.articletype} | ${product.brandname}</p>
+              <p class="product-price"DKK <span>${product.rpice}</span>,-</p>
+              <a href="product.html?produktid=${product.id}">Read more</a>
+          </div>
+      
+          <div class="rabat_container">
+              <p> Now DKK <span>${math.floor((product.price * product.discount) / 100)}</span>,-</p>
+              <p><span>${product.discount}</span>%</p>
+          </div>
+          </div>
+        </article>
+        </section> -->
     </main>
 
     <footer>
