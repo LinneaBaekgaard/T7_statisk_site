@@ -1,92 +1,105 @@
 <!DOCTYPE html>
 <html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/generel.css" />
-    <script src="productlist.js" defer></script>
-    <title>Produktet</title>
-  </head>
-  <body>
-    <header>
-      <nav class="flex_container">
-        <ul>
-          <li><a href="index.html">Categories</a></li>
-          <li><a href="index.html">Brands</a></li>
-          <li><a href="index.html">Seasons</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/generel.css">
+    <script src="../js/productlist.js" defer></script>
+    <title>Produktliste</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="menu_liste">
+            <li><a class="menu" href="index.html">Categories</a></li>
+            <li><a class="menu" href="index.html">Brands</a></li>
+            <li><a class="menu" href="index.html">Seasons</a></li>
         </ul>
-      </nav>
-      <h1>Fashion<span class="r">R</span>Us</h1>
-    </header>
+    </nav>
 
-    <main>
-      <h3>Produkter</h3>
-      <section class="productList"></section>
-      <!-- <section class="product_list_container">
-        <article class="product_card" >
-        <div class="sold_out  ${product.soldout && "sold_out"}">Sold Out</div>
-            <div class="card1">
-                    <a href="product.html">
-                        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje"/>
-                    </a>
-                <div class="product_info">
-                    <h3 class="product-title">${product.productdisplayname}</h3>
-                        <p class="product-category">Shorts | Nike</p>
-                        <p class="product-price">DKK ${product.price} ,-</p>
-                        <a href="product.html" class="read_more">Read More</a>
-                </div>   
-                <div class="rabat_container">
-                    <p class="rabat ${product.discount && "rabat_container"}">%</p>
-                </div>
-            </div>
-        </article>
-      </section> -->
+    <h1 class="overskrift">
+        Fashion<span class="r">R</span>Us
+    </h1>
+</header>
 
-      <!-- <section class="product_list_container">
-        <article class="product_card" >
-        <div class="sold_out  ${product.soldout && "sold_out"}">Sold Out</div>
-            <div class="card1">
-                    <a href="product.html">
-                        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje"/>
-                    </a>
-                <div class="product_info">
-                    <h3>${product.productdisplayname}</h3>
-                        <p class="product-category">class="product-category">${product.articletype} | ${product.brandname}</p>
-                        <p class="product-price"DKK <span>${product.rpice}</span>,-/p>
-                        <a href="product.html" class="read_more">Read More</a>
-                </div>   
-                <div class="rabat_container">
-                    <p> Now DKK <span>${math.floor((product.price * product.discount) / 100)}</span>,-</p>
-                    <p><span>${product.discount}</span>%</p> 
-                </div>
-            </div>
-        </div>
-        </article>
-      </section> -->
+<main">
 
-      <!-- <section class="product_list_container">
-        <article class="product_card ${product.discount && "rabat"} ${product.solout && "sold_out"}">
-          <div class="card1">
-              <img 
-                  src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image"/>
-          <div class="product_info">
-              <h3>${product.productdisplayname}</h3>
-              <p class="product-category">${product.articletype} | ${product.brandname}</p>
-              <p class="product-price"DKK <span>${product.rpice}</span>,-</p>
-              <a href="product.html?produktid=${product.id}">Read more</a>
-          </div>
-      
-          <div class="rabat_container">
-              <p> Now DKK <span>${math.floor((product.price * product.discount) / 100)}</span>,-</p>
-              <p><span>${product.discount}</span>%</p>
-          </div>
-          </div>
-        </article>
-        </section> -->
-    </main>
 
-    <footer>
-      <p>Tema 7 - Statisk site</p>
-    </footer>
-  </body>
+<h2>Produkter</h2>
+
+<section class="productList">
+
+</section>
+
+<!-- <section class="produkter">
+    <article>
+        <img src="../img/trøje.webp" alt="trøje">
+        <p><b>Round Neck Jersey</b><br>DK 500,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/sko.webp" alt="sko">
+        <p><b>Kalenji Træningssko</b><br> Før DKK <s>1595,-</s>  <br> Nu DKK 1560,- <span class="tilbud">-34%</span> </p>
+        <a class="read_more" href="product.html">Gå til produkt</a> 
+    </article>
+    <article class="sold-out_container">
+        <img class="sold-out_billede" src="../img/tights.webp" alt="tights">
+        <span class="sold-out_tekst">Udsolgt</span>
+        <p><s><b>Træningstights</b><br>DK 900,- </s></p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/bold.webp" alt="bold">
+        <p><b>Fodbold</b><br>DK 749,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/sko_grøn.webp" alt="sko">
+        <p><b>Løbesko</b><br>DK 1595,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/roed_fodbold.webp" alt="fodbold">
+        <p><b>Fodbold</b><br>DKK 749,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/rygsæk.webp" alt="rygsæk">
+        <p><b>Rygsæk</b><br> Før DKK <s>2595,-</s>  <br> Nu DKK 2076,- <span class="tilbud">-20%</span> </p>
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/vandflaske.webp" alt="vandflaske">
+        <p><b>Vandflaske</b><br>DK 250,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/blaa_tshirt.webp" alt="t-shirt">
+        <p><b>Blå t-shirt</b><br>DK 300,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article class="sold-out_container">
+        <img class="sold-out_billede" src="../img/joggingbukser.webp" alt="bukser"> <span class="sold-out_tekst">Udsolgt</span>
+        <p><b>Joggingbukser</b><br>DKK 400,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/lynlaas.webp" alt="trøje">
+        <p><b>Trøje med lynlås</b><br>DK 100,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+    <article>
+        <img src="../img/badehætte.webp" alt="badehætte">
+        <p><b>badehætte</b><br>DK 150,- </p> 
+        <a class="read_more" href="product.html">Gå til produkt</a>
+    </article>
+</section> -->
+
+</main>
+
+<footer>
+    <p>Fashion<span class="r">R</span>Us</p>
+    <p>Alle rettigheder forbeholdes</p>
+</footer>
+</body>
 </html>
