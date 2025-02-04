@@ -1,288 +1,189 @@
-body {
-    font-family:Arial, Helvetica, sans-serif ;
-    margin: 10px 30px 10px 30px;
-}
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-/***********************  Header  *********************/
-.r {
+* {
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    padding: 2px;
+  }
+  
+  header {
+    margin-top: 30px;
+  }
+  
+  .menu_liste {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    justify-content: right;
+    list-style-type: none;
+  }
+  
+  .menu {
+    text-decoration: none;
+    color: #000;
+    border: solid 1px black;
+    padding: 10px;
+  }
+  
+  .r {
     transform: scaleX(-1);
     display: inline-block;
-    color: red;
-}
-.flex_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-.flex_container ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    gap: 10px;
-}
-.flex_container a {
-    text-decoration: none;
-    color: #000;
-}
-.flex_container a:hover {
-    cursor: pointer;
-    color: #fff;
-    background-color: red;
-}
-/*******************  Forside Bokse  ******************/
-.wrapper_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: rgb(252, 0, 0);
+  }
+  
+  .overskrift {
+    font-size: 40px;
+  }
+  
+  footer {
     text-align: center;
-    width: 100%;
-}
-.category_list_container {
+    padding-top: 80px;
+  }
+  
+  /* index */
+  
+  .knap_container {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px; 
-    width: 80%;
-    max-width: 800px;
-}
-.category_list_container a {
+    text-align: center;
+  }
+  
+  .knap1,
+  .knap2,
+  .knap3,
+  .knap4,
+  .knap5,
+  .knap6 {
+    background: color #fff;
+    color: #000;
+    border: solid 1px black;
+    margin: 5px;
+    cursor: pointer;
     text-decoration: none;
-}
-.box {
-    background-color: gray;
-    color: white;
-    padding: 25px;
-    font-size: 15px;
-    border-radius: 3px;
-}
-/*  Bokse hover  */
-.category_list_container a:hover {
-    cursor: pointer;
-    background-color: lightgrey;
-    color: gray;
-}
-/*******************  Product Cards  ******************/
-.product_list_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 400px;
-    gap: 10px;
-}
-.card1 img:hover, .card2 img:hover, .card3 img:hover, .card4 img:hover {
-    cursor: pointer;
-}
-.card1 {
-    grid-column: 1;
-    grid-row: 1;
-}
-.card2 {
-    grid-column: 2;
-    grid-row: 1;
-}
-.card3 {
-    grid-column: 1;
-    grid-row: 2;
-    position: relative;
-}
-.card4 {
-    grid-column: 2;
-    grid-row: 2;
-    position: relative;
-}
-.card3 img,
-.card4 img {
-    opacity: 50%;
-}
-.product_card {
-   border: 1px solid #000; 
-   /* width: 195px;
-   height: 100%; */
-   border-radius: 2px;
-   overflow: hidden;
-   background-color: white;
-   text-align: left;
-}
-.product_info {
-    border-top: 1px solid #000;
-    padding: 0 5px 5px 5px;
-}
-/*  Rabat%  */
-.rabat_container {
-    display: flex;
-    justify-content: flex-end;
-}
-.rabat {
-    width: 40px;
-    background-color: red;
-    margin-right: 5px;
-}
-/* Læs mere knap */
-.read_more {
-    color: #000;
-    display: block;
-}
-.read_more:hover {
-    color: gray;
-}
-/* Sold Out knap */
-.sold_out {
-    position: absolute;
-    background-color: #444;
-    color: #fff;
-    padding: 15px 15px 15px 15px;
-}
-/* tekst på cards */
-.product-category {
-    color: lightgray;
-}
-/******************  Single Products  ******************/
-.product_container {
-    max-width: 400px;
-}
-.product_container img {
-    opacity: 50%;
-}
-/* Choose size knap */
-.choose_size {
-    position: relative;
-    display: inline-block;
-    border: 1px solid grey;
-    width: 135px;
-    height: fit-content;
-}
-.size_button {
-    background-color:#fff;
-    color: #000;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-}
-.size_dropdown {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    background-color: white;
-    border: 1px solid lightgray;
-    width: 100px;
-    color: #000;
-    /* Skjult før man klikker */
-    display: none;
-}
-.size_dropdown li {
+    padding: 30px 30px;
+    font-size: 20px;
+  }
+  
+  a:hover {
+    opacity: 0.5;
+  }
+  
+  article {
     padding: 10px;
-    cursor: pointer;
-    text-align: center;
-}
-.size_dropdown li:hover {
-    background-color: #fff;
-}
-.choose_size:hover .size_dropdown {
-    /* Synlig, når man hover/klikker */
-    display: block;
-    width: 100px;
-
-}
-/* Add to basket knap */
-.add_to_basket {
+  }
+  
+  /* produktliste */
+  
+  .produkter {
     display: grid;
-    background-color: lightgray;
-    color: #fff;
-    padding: 10px 10px 10px 10px;
-    text-align: left;
-}
-.add_to_basket_knap {
-    text-align: center;
-    background-color: #fff;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 18px;
-    width: 150px;
-    margin: 10px 0 0 0;
-   padding: 10px;
-}
-.add_to_basket_knap a {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+  }
+  
+  .read_more {
     text-decoration: none;
     color: #000;
-    margin: 20px 0 0 0 ;
-}
-/**********************  Footer  **********************/
-footer {
-    border-top: 2px solid #000;
-    text-align: center;
-    margin: 22px 5px 0 5px;
-    /* margin: 25px 500px 0 500px; */
-}
-/*********************  Media query *******************/
-/* Tablet */
-@media (width >= 700px) {
-    .category_list_container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 900px;
-        margin: 100px 0 200px 0;
+    margin-top: auto;
+    border-bottom: solid 1px black;
+  }
+  
+  .tilbud {
+    background-color: red;
+    display: inline-block;
+  }
+  
+  .sold-out_container {
+    position: relative;
+  }
+  
+  .sold-out_billede {
+    position: relative;
+  }
+  
+  .sold-out_tekst {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .sold-out_container img {
+    filter: grayscale(80%) opacity(50%);
+  }
+  
+  /* produktside */
+  
+  .tilbage {
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    margin-right: 10vw;
+    list-style-type: none;
+  }
+  
+  .produkt_side {
+    border: none;
+  }
+  
+  .kurven {
+    border: solid 1px #000;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .kurven:hover {
+    opacity: 0.5;
+  }
+  
+  @media (width >= 700px) {
+    h1 {
+      font-size: 80px;
     }
-    .product_list_container {
-        display: grid;
-        grid-template-columns:repeat(3, 1fr);
-        max-width: 1000px;
-        gap: 10px;
+  
+    /* index */
+  
+    .knap_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 60px;
+      gap: 10px;
     }
-   .product_container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 1000px;
-   }
-   .add_to_basket {
-        margin: 20px 0;
-        width: 100%;
-        grid-column: 1/4;
-   }
-   .single_product_info {
-        margin: 0 0 0 20px;
-   }
-   .choose_size {
-        margin-bottom: 20px;
-   }
-   .add_to_basket_knap {
-        grid-column: 1;
-        padding: 20px 0 20px 0;
-        text-align: center;
-        width: 100%;
+  
+    /* produktliste */
+  
+    .produkter {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
     }
-}
-/* Desktop */
-@media (width >= 1000px) {
- .product_list_container {
-        display: grid;
-        /* grid-template-columns:repeat(4, 1fr); */
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        max-width: 1200px;
-        gap: 10px;
+  
+    /* produktside */
+  
+    .tilbage {
+      margin-right: 400%;
     }
-    .product_container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1200px;
+  
+    .produkt_side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: none;
     }
-    .add_to_basket {
-        grid-column: 3;
-        width: 200px;
+  
+    .produkt_billede {
+      grid-row: 1/4;
+      grid-column: 1;
     }
-    .add_to_basket_knap {
-            grid-column: 1;
-            padding: 20px 0 0 0px;
-            text-align: center;
-            width: 100%;
-        }
-    h5 {
-        font-size: xx-large;
+  
+    .produkt_tekst {
+      font-size: 30px;
+      padding: 30px;
     }
-
-}
+  
+    .kurven {
+      font-size: 20px;
+      grid-row: 2;
+      grid-column: 2;
+      display: inline-block;
+      margin: 30px;
+    }
+  }
+  

@@ -11,9 +11,8 @@ function showProductList(data) {
   const markup = data
     .map(
       (product) =>
-        `
-    <section class="product_list_container">
-        <article class="product_card">
+        `<article class="product_card" >
+        <div class="sold_out">Sold Out</div>
             <div class="card1">
                     <a href="product.html">
                         <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje"/>
@@ -24,8 +23,12 @@ function showProductList(data) {
                         <p class="product-price">DKK ${product.price} ,-</p>
                         <a href="product.html" class="read_more">Read More</a>
                 </div>   
+                <div class="rabat_container ${product.discount}">
+                    <p class="rabat">%</p>
+                </div>
             </div>
-        </article>`
+        </article>
+      `
     )
     .join("");
 
