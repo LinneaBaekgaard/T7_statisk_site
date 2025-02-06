@@ -1,20 +1,14 @@
-console.log("index script loaded");
+const categoriesContainer = document.querySelector(".knap_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/categories`)
+fetch(`https://kea-alt-del.dk/t7/api/categories/`)
   .then((response) => response.json())
-  .then(showCategori);
+  .then((data) => showCategori(data));
 
-function showCategori(data) {
-  console.log("mine data er:", data);
+function showCategori(categories) {
+  console.log("mine data er: ", categories);
 
-  const markup = data
-    .map(
-      (element) => `
-<a href="productlist.html?category=${element.category}" class="box box1">${element.category}</a>
-`
-    )
-    .join("");
+  const markup = categories.map((mycategory) => `<a href="productlist.html?category=${mycategory.category}">${mycategory.category}</a>`).join("");
 
   console.log("min markup er", markup);
-  document.querySelector("a").innerHTML = markup;
+  categoriesContainer.innerHTML = markup;
 }

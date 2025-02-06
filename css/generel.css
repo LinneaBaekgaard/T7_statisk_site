@@ -1,13 +1,20 @@
 * {
     max-width: 100%;
-    font-family: Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif ;
     padding: 2px;
   }
-  
+  body {
+    margin: 10px 30px 10px 30px;
+  }
+  /***********************  Header  *********************/
+  .r {
+    transform: scaleX(-1);
+    display: inline-block;
+    color: rgb(252, 0, 0);
+  }
   header {
     margin-top: 30px;
   }
-  
   .menu_liste {
     display: flex;
     justify-content: space-between;
@@ -15,43 +22,25 @@
     justify-content: right;
     list-style-type: none;
   }
-  
   .menu {
     text-decoration: none;
     color: #000;
-    border: solid 1px black;
     padding: 10px;
   }
-  
-  .r {
-    transform: scaleX(-1);
-    display: inline-block;
-    color: rgb(252, 0, 0);
+  .menu:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: red;
   }
-  
   .overskrift {
     font-size: 40px;
   }
-  
-  footer {
-    text-align: center;
-    padding-top: 80px;
-  }
-  
-  /* index */
-  
-  .knap_container {
+/***********************  Index  *********************/
+.knap_container {
     display: grid;
     text-align: center;
   }
-  
-  .knap1,
-  .knap2,
-  .knap3,
-  .knap4,
-  .knap5,
-  .knap6 {
-    background: color #fff;
+  .knap_container a {
     color: #000;
     border: solid 1px black;
     margin: 5px;
@@ -60,80 +49,130 @@
     padding: 30px 30px;
     font-size: 20px;
   }
-  
-  a:hover {
-    opacity: 0.5;
+  .knap_container a:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: #fff;
   }
-  
   article {
     padding: 10px;
   }
-  
-  /* produktliste */
-  
-  .produkter {
+
+/********************  Productlist  ********************/
+
+.productList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 5px;
   }
-  
+  .smallProduct {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .smallProduct:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.1);
+  }
   .read_more {
     text-decoration: none;
     color: #000;
     margin-top: auto;
     border-bottom: solid 1px black;
   }
-  
   .tilbud {
     background-color: red;
-    display: inline-block;
+    color: white;
+    padding: 2px 5px;
   }
-  
   .sold-out_container {
     position: relative;
   }
-  
   .sold-out_billede {
     position: relative;
   }
-  
   .sold-out_tekst {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 5px 10px;
-    font-size: 12px;
+    top: 12px;
+    left: 12px;
+    padding: 10px 15px;
+    font-size: 20px;
+    background-color: #444;
+    color: #fff;
   }
-  
   .sold-out_container img {
-    filter: grayscale(80%) opacity(50%);
+    opacity: 40%;
   }
-  
-  /* produktside */
-  
-  .tilbage {
+
+/******************  Single Products  ******************/
+/* Choose size knap */
+.choose_size {
+    position: relative;
+    display: inline-block;
+    border: 1px solid grey;
+    width: 135px;
+    height: fit-content;
+}
+.size_button {
+    background-color:#fff;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.size_dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 100px;
+    color: #000;
+    /* Skjult før man klikker */
+    display: none;
+}
+.size_dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.size_dropdown li:hover {
+    background-color: #fff;
+}
+.choose_size:hover .size_dropdown {
+    /* Synlig, når man hover/klikker */
+    display: block;
+    width: 100px;
+}
+.tilbage {
     color: #000;
     padding: 10px;
     text-decoration: none;
     margin-right: 10vw;
     list-style-type: none;
   }
-  
   .produkt_side {
     border: none;
   }
-  
   .kurven {
     border: solid 1px #000;
     padding: 10px;
     display: inline-block;
     cursor: pointer;
   }
-  
   .kurven:hover {
     opacity: 0.5;
   }
+  /**********************  Footer  **********************/
+  footer {
+    border-top: 2px solid #000;
+    text-align: center;
+    padding-top: 80px;
+    margin: 22px 5px 0 5px;
+  }
   
+/*********************  Media query *******************/
   @media (width >= 700px) {
     h1 {
       font-size: 80px;
