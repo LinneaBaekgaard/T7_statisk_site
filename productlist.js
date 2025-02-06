@@ -2,8 +2,10 @@ console.log("script hentet");
 
 const category = "Apparel";
 const listContainer = document.querySelector(".productList");
+const params = new URLSearchParams(window.location.search);
+const selectedCategory = params.get("category");
 
-fetch(`https://kea-alt-del.dk/t7/api/products?limit=100`)
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${selectedCategory}`)
   .then((response) => response.json())
   .then(showProductList);
 
@@ -12,27 +14,19 @@ function showProductList(data) {
     .map(
       (product) =>
         `
-      <section class="produkter">
-      <article>
-        <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje">
-        <p><b>${product.productdisplayname}</b><br>DKK ${product.price},- </p>
-        <a class="read_more" href="product.html">Gå til produkt</a>
-      </article>
+<section class="produkt">
+  <article class="smallProduct ${product.soldout ? "sold-out_container" : ""}">
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="trøje">
+    <p><b>${product.productdisplayname}</b><br>DKK ${product.price},- </p>
+    Nu DKK ${product.price},- ${product.discount ? `<span class="tilbud">${product.discount}%</span>` : ""}
+    </p>
 
-      <article class="smallProduct ${product.discount && "tilbud"}">
-         <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="sko">
-        <p><b>${product.productdisplayname}</b><br> Nu DKK ${product.price},- <span class="tilbud">${product.discount}%</span><br></p>
-        <p><a class="read_more" href="product.html">Gå til produkt</a></p>
-        </article>
+    ${product.soldout ? '<span class="sold-out_tekst">Udsolgt</span>' : ""}
 
-        <article class="sold-out_container ${product.solout && "soldOut"}">
-        <img class="sold-out_billede" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="tights">
-        <span class="sold-out_tekst">Udsolgt</span>
-        <p><s><b>${product.productdisplayname}</b><br>DK ${product.price} ,- </s></p> 
-        <a class="read_more" href="product.html">Gå til produkt</a>
-    </article>
-      </section>
-      `
+    <a class="read_more" href="product.html">Gå til produkt</a>
+  </article>
+</section>
+    `
     )
     .join("");
 
